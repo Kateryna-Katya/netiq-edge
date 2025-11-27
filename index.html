@@ -1,347 +1,517 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netiq-Edge | Консалтинг-блог | Инновационная технология</title>
-    <meta name="description" content="Netiq-Edge — ваш проверенный партнер в стратегическом консалтинге. Откройте новые возможности с Технология нового поколения.">
-
-    <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@600;700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NetIQ-Edge | Карьерный Апгрейд</title>
+  <meta name="description"
+    content="Инновационная платформа для карьерного роста и апгрейда. Воплотите мечты в реальность с NetIQ-Edge.">
+  <meta name="keywords"
+    content="карьерный рост, карьерный апгрейд, консультации, netiq, netiq-edge, Германия, ЕС, пассивный доход, технология нового поколения">
+<link rel="icon" type="image/svg+xml"
+  href="data:image/svg+xml;utf8,<svg width='64' height='64' viewBox='0 0 64 64' fill='none' xmlns='http://www.w3.org/2000/svg'><rect width='64' height='64' fill='%23080A1F'/><g opacity='0.4' fill='%2300BCD4'><circle cx='16' cy='16' r='3'/><circle cx='48' cy='16' r='3'/><circle cx='16' cy='48' r='3'/><circle cx='48' cy='48' r='3'/></g><path d='M 20 44 L 32 20 L 44 44 L 32 38 L 20 44 Z' fill='%23FF4081' stroke='%23EFEFEF' stroke-width='2'/><path d='M 32 20 L 32 10' stroke='%2300BCD4' stroke-width='4' stroke-linecap='round'/><filter id='shadow'><feDropShadow dx='0' dy='0' stdDeviation='3' flood-color='%2300BCD4' flood-opacity='0.8'/></filter><path d='M 32 20 L 32 10' stroke='%2300BCD4' stroke-width='4' stroke-linecap='round' style='filter:url(%23shadow);'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+  rel="stylesheet">
     <script type="module" crossorigin src="/netiq-edge/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/netiq-edge/assets/styles-B_qgH9E3.css">
+    <link rel="stylesheet" crossorigin href="/netiq-edge/assets/styles-BEyfRr3P.css">
   </head>
   <body>
-    <div id="mouse-spotlight"></div>
-    
+    <header class="header">
+    <div class="container header__container">
+        <a href="#" class="header__logo logo">NetIQ-Edge</a>
+
+        <nav class="header__nav nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="#hero" class="nav__link">Главная</a></li>
+                <li class="nav__item"><a href="#methodology" class="nav__link">Методология</a></li>
+                <li class="nav__item"><a href="#cases" class="nav__link">Кейсы</a></li>
+                <li class="nav__item"><a href="#blog" class="nav__link">Блог</a></li>
+                <li class="nav__item"><a href="#pricing" class="nav__link">Тарифы</a></li>
+                <li class="nav__item"><a href="#faq" class="nav__link">FAQ</a></li>
+                <li class="nav__item">
+                    <a href="#contact" class="nav__link nav__link--cta btn btn--small">
+                        Узнать детали
+                       
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <button class="header__burger" id="burger-menu">
+            <i data-lucide="menu"></i>
+        </button>
+    </div>
+</header>
 
     <main>
       <!-- Loads the specified .html file -->
       <section class="hero" id="hero">
-  <canvas id="digitalGridCanvas" class="hero__canvas"></canvas>
+    <canvas id="hero-canvas" class="hero__canvas"></canvas>
 
-  <div class="hero__content container">
-      <h1 class="hero__title">
-          **Инновационная технология**:
-          <span class="hero__highlight">Разработка AI и Ботов нового поколения</span>
-      </h1>
-      <p class="hero__text">
-          Мы создаем **Технология нового поколения** AI-ассистентов. **Откройте новые возможности** для Вашего бизнеса и **Воплотите мечты в реальность** в автоматизации.
-      </p>
-      <div class="hero__actions">
-          <a href="#contact" class="hero__cta button button--primary pulsate-button">
-              Пройти регистрацию
-          </a>
-          <a href="#services" class="hero__details button button--secondary pulsate-button">
-              Узнать детали
-          </a>
-      </div>
-  </div>
+    <div class="container hero__container">
+        <div class="hero__content">
+            <h1 class="hero__title">
+                Карьерный Апгрейд:
+                <span class="hero__title--accent">Технология Нового Поколения</span>
+            </h1>
+            <p class="hero__subtitle">
+                Откройте новые возможности и воплотите мечты в реальность с нашей инновационной методологией. Быстрый и
+                легкий старт к вашему успеху в странах ЕС.
+            </p>
+            <a href="#contact" class="hero__cta btn btn--large">
+                Пройти онлайн тест
+                <i data-lucide="check-circle"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="hero__info">
+        <i data-lucide="info"></i>
+        <p>
+            <span class="hero__info--bold">Важно:</span>
+            Предложение активно только в странах ЕС. Детали на сайте.
+        </p>
+    </div>
+</section>
+<section class="section section--light" id="methodology">
+    <div class="container">
+        <h2 class="section__title section__title--center">
+            Edge-Методология: Сформировать Полное Понимание
+        </h2>
+        <p class="section__description section__description--center">
+            Наш инновационный подход позволяет вам быстро и легко стартовать в карьерном апгрейде, даже если у вас нет
+            опыта.
+        </p>
+
+        <div class="methodology__grid">
+
+            <div class="methodology__card card" data-delay="0">
+                <div class="card__header">
+                    <span class="card__number">01</span>
+                    <i data-lucide="scan-line" class="card__icon"></i>
+                </div>
+                <h3 class="card__title">Глубокий Аудит Потенциала</h3>
+                <p class="card__text">Начните с прохождения онлайн теста. Мы анализируем ваши навыки и амбиции, чтобы
+                    оценить перспективы проекта. Легко разобраться без опыта!</p>
+            </div>
+
+        <div class="methodology__card card" data-delay="150">
+                <div class="card__header">
+                    <span class="card__number">02</span>
+                    <i data-lucide="git-fork" class="card__icon"></i>
+                </div>
+                <h3 class="card__title">Индивидуальная Стратегия</h3>
+                <p class="card__text">Мы создаем персонализированный карьерный маршрут. Это ваш быстрый и легкий старт к
+                    целям. Подключение занимает 2 минуты.</p>
+            </div>
+
+        <div class="methodology__card card" data-delay="300">
+                <div class="card__header">
+                    <span class="card__number">03</span>
+                    <i data-lucide="trending-up" class="card__icon"></i>
+                </div>
+                <h3 class="card__title">Активный Апгрейд Навыков</h3>
+                <p class="card__text">Вы получаете доступ к программе пассивного дохода и эксклюзивным материалам,
+                    расширяя свои горизонты проекта. Проверенный партнер для вашего роста.</p>
+            </div>
+
+        <div class="methodology__card card" data-delay="450">
+                <div class="card__header">
+                    <span class="card__number">04</span>
+                    <i data-lucide="zap" class="card__icon"></i>
+                </div>
+                <h3 class="card__title">Мониторинг и Коррекция</h3>
+                <p class="card__text">Постоянное сопровождение и бесплатная консультация по всем вопросам. Достигайте
+                    вершины, используя инновационную технологию.</p>
+            </div>
+
+        </div>
+
+        <div class="methodology__cta-wrap">
+            <a href="#contact" class="btn btn--secondary btn--large">
+                Получить больше информации
+            </a>
+        </div>
+    </div>
+</section>
+<section class="section" id="cases">
+    <div class="container">
+        <h2 class="section__title section__title--center">
+            Истории Успеха: Воплотите Мечты в Реальность
+        </h2>
+        <p class="section__description section__description--center">
+            NetIQ-Edge — это проверенный партнер на пути к вашей цели. Доступ к платформе открыт, и вот лишь несколько
+            примеров того, как наши клиенты расширили горизонты своего проекта.
+        </p>
+
+        <div class="cases__grid">
+
+        <div class="cases__card case-card" data-delay="0">
+                <div class="case-card__image-wrap">
+                    <img src="img/placeholder.png" alt="Успех: от ассистента до менеджера" class="case-card__image">
+                </div>
+                <h3 class="case-card__title">🚀 От Ассистента до Project Manager</h3>
+                <p class="case-card__detail">
+                    <i data-lucide="map-pin"></i>
+                    Мюнхен, Германия
+                </p>
+                <p class="case-card__quote">
+                    "Благодаря стратегии NetIQ-Edge я получил повышение в течение 6 месяцев. Это был быстрый и легкий
+                    старт!"
+                </p>
+                <a href="#contact" class="case-card__cta btn btn--secondary btn--small">Узнать больше</a>
+            </div>
+
+            <div class="cases__card case-card" data-delay="150">
+                <div class="case-card__image-wrap">
+                    <img src="img/placeholder.png" alt="Успех: смена сферы IT" class="case-card__image">
+                </div>
+                <h3 class="case-card__title">💡 Смена Карьеры в IT</h3>
+                <p class="case-card__detail">
+                    <i data-lucide="map-pin"></i>
+                    Берлин, Германия
+                </p>
+                <p class="case-card__quote">
+                    "Я смог легко разобраться без опыта в новой сфере. Теперь я использую технологию для пассивного
+                    дохода."
+                </p>
+                <a href="#contact" class="case-card__cta btn btn--secondary btn--small">Узнать больше</a>
+            </div>
+
+            <div class="cases__card case-card" data-delay="300">
+                <div class="case-card__image-wrap">
+                    <img src="img/placeholder.png" alt="Успех: увеличение дохода" class="case-card__image">
+                </div>
+                <h3 class="case-card__title">📈 Увеличение Дохода на 45%</h3>
+                <p class="case-card__detail">
+                    <i data-lucide="map-pin"></i>
+                    Вена, Австрия (ЕС)
+                </p>
+                <p class="case-card__quote">
+                    "Консультация помогла мне оценить перспективы проекта и выйти на новый финансовый уровень.
+                    Подключение заняло 2 минуты."
+                </p>
+                <a href="#contact" class="case-card__cta btn btn--secondary btn--small">Узнать больше</a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<section class="section section--light" id="blog">
+    <div class="container">
+        <h2 class="section__title section__title--center">
+            Insights & Edge: Погрузиться в Детали
+        </h2>
+        <p class="section__description section__description--center">
+            Расширьте горизонты проекта и своего мышления. В нашем блоге вы найдете эксклюзивные материалы об
+            инновационной технологии и секретах успешного карьерного апгрейда.
+        </p>
+
+        <div class="blog__grid">
+
+            <a href="#" class="blog-card">
+                <img src="img/placeholder.png" alt="Заголовок статьи 1" class="blog-card__image">
+                <div class="blog-card__content">
+                    <span class="blog-card__date">20 Ноября 2025</span>
+                    <h3 class="blog-card__title">Тренды 2026: Какие навыки нужны в странах ЕС?</h3>
+                    <p class="blog-card__excerpt">
+                        Глубокий анализ рынка труда. Узнайте, как технология нового поколения меняет требования к
+                        специалистам.
+                    </p>
+                </div>
+            </a>
+
+            <a href="#" class="blog-card">
+                <img src="img/placeholder.png" alt="Заголовок статьи 2" class="blog-card__image">
+                <div class="blog-card__content">
+                    <span class="blog-card__date">15 Ноября 2025</span>
+                    <h3 class="blog-card__title">Как работает программа пассивного дохода для карьеристов</h3>
+                    <p class="blog-card__excerpt">
+                        Погрузитесь в детали нашей инновационной программы. Легко разобраться без опыта!
+                    </p>
+                </div>
+            </a>
+
+            <a href="#" class="blog-card">
+                <img src="img/placeholder.png" alt="Заголовок статьи 3" class="blog-card__image">
+                <div class="blog-card__content">
+                    <span class="blog-card__date">08 Ноября 2025</span>
+                    <h3 class="blog-card__title">Проверенный партнер: почему NetIQ-Edge — Платформа года?</h3>
+                    <p class="blog-card__excerpt">
+                        Мы оцениваем перспективы проекта вместе с вами. Быстрый и легкий старт к вершине.
+                    </p>
+                </div>
+            </a>
+        </div>
+
+        <div class="blog__cta-wrap">
+            <p class="blog__cta-text">
+                Готовы обсудить вашу личную стратегию?
+            </p>
+            <a href="#contact" class="btn btn--large">
+                Бесплатная консультация по всем вопросам
+            </a>
+        </div>
+
+    </div>
+</section>
+<section class="section" id="pricing">
+    <div class="container">
+        <h2 class="section__title section__title--center">
+            Ваш Путь к Edge: Оценить Перспективы Проекта
+        </h2>
+        <p class="section__description section__description--center">
+            Выберите свой уровень карьерного апгрейда. Подключение занимает 2 минуты, и вы получаете доступ к
+            инновационной технологии, разработанной для пассивного дохода.
+        </p>
+
+        <div class="pricing__grid">
+
+            <div class="pricing__card">
+                <h3 class="pricing__title">Start</h3>
+                <p class="pricing__subtitle">Быстрый и легкий старт</p>
+                <div class="pricing__price">
+                    <span class="pricing__currency">€</span>99
+                    <span class="pricing__period">/ месяц</span>
+                </div>
+                <ul class="pricing__features">
+                    <li><i data-lucide="check"></i> Первичный онлайн тест</li>
+                    <li><i data-lucide="check"></i> Базовый аудит потенциала</li>
+                    <li><i data-lucide="x" class="feature--negative"></i> Доступ к программе пассивного дохода</li>
+                    <li><i data-lucide="x" class="feature--negative"></i> Персональный куратор</li>
+                </ul>
+                <a href="#contact" class="btn btn--secondary btn--full">
+                    Получить больше информации
+                </a>
+            </div>
+
+            <div class="pricing__card pricing__card--featured">
+                <div class="pricing__badge">Рекомендовано</div>
+                <h3 class="pricing__title">Pro</h3>
+                <p class="pricing__subtitle">Полное понимание и развитие</p>
+                <div class="pricing__price">
+                    <span class="pricing__currency">€</span>249
+                    <span class="pricing__period">/ месяц</span>
+                </div>
+                <ul class="pricing__features">
+                    <li><i data-lucide="check"></i> Индивидуальная Edge-Методология</li>
+                    <li><i data-lucide="check"></i> **Доступ к программе пассивного дохода**</li>
+                    <li><i data-lucide="check"></i> Ежемесячный мониторинг прогресса</li>
+                    <li><i data-lucide="x" class="feature--negative"></i> Персональный куратор 24/7</li>
+                </ul>
+                <a href="#contact" class="btn btn--full">
+                    Пройти регистрацию
+                </a>
+            </div>
+
+            <div class="pricing__card">
+                <h3 class="pricing__title">VIP Edge</h3>
+                <p class="pricing__subtitle">Максимум возможностей</p>
+                <div class="pricing__price">
+                    <span class="pricing__currency">€</span>499
+                    <span class="pricing__period">/ месяц</span>
+                </div>
+                <ul class="pricing__features">
+                    <li><i data-lucide="check"></i> Все преимущества тарифа Pro</li>
+                    <li><i data-lucide="check"></i> **Персональный куратор 24/7**</li>
+                    <li><i data-lucide="check"></i> Ежеквартальный пересмотр стратегии</li>
+                    <li><i data-lucide="check"></i> Приоритетная бесплатная консультация</li>
+                </ul>
+                <a href="#contact" class="btn btn--secondary btn--full">
+                    Узнать детали
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="section section--light" id="faq">
+    <div class="container">
+        <h2 class="section__title section__title--center">
+            Ответы на Ваши Вопросы: Онлайн Регистрация и Доступ
+        </h2>
+        <p class="section__description section__description--center">
+            Получите больше информации о том, как начать свой карьерный апгрейд. Платформа уже доступна в Европе.
+        </p>
+
+        <div class="faq__wrapper">
+
+            <div class="faq__item">
+                <button class="faq__question" data-question="1">
+                    <h3>Как пройти онлайн регистрацию?</h3>
+                    <i data-lucide="chevron-down" class="faq__icon"></i>
+                </button>
+                <div class="faq__answer">
+                    <p>Онлайн регистрация занимает всего несколько минут. Выберите подходящий тариф в секции выше и
+                        нажмите кнопку "Пройти регистрацию". Подключение занимает 2 минуты, после чего вы сразу
+                        получаете доступ к нашим инструментам.</p>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" data-question="2">
+                    <h3>Действительно ли платформа уже доступна в Европе?</h3>
+                    <i data-lucide="chevron-down" class="faq__icon"></i>
+                </button>
+                <div class="faq__answer">
+                    <p>Да! **Платформа уже доступна в Европе** (в странах ЕС). Мы фокусируемся на рынке Германии,
+                        Австрии и других стран ЕС, предлагая уникальные возможности для карьерного роста, используя
+                        технологию нового поколения.</p>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" data-question="3">
+                    <h3>Сложно ли разобраться в методологии без опыта?</h3>
+                    <i data-lucide="chevron-down" class="faq__icon"></i>
+                </button>
+                <div class="faq__answer">
+                    <p>Вовсе нет! Наш принцип — **Легко разобраться без опыта**. Все шаги Edge-Методологии
+                        структурированы и поданы максимально просто. Вам не нужно быть экспертом, чтобы оценить
+                        перспективы проекта и начать свой быстрый и легкий старт.</p>
+                </div>
+            </div>
+
+            <div class="faq__item">
+                <button class="faq__question" data-question="4">
+                    <h3>Могу ли я получить бесплатную консультацию?</h3>
+                    <i data-lucide="chevron-down" class="faq__icon"></i>
+                </button>
+                <div class="faq__answer">
+                    <p>Конечно. Вы можете оставить заявку в секции контактов (ниже) и получить **Бесплатную консультацию
+                        по всем вопросам**. Наш проверенный партнер поможет вам сформировать полное понимание вашего
+                        карьерного потенциала.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="section" id="contact">
+    <div class="container">
+        <h2 class="section__title section__title--center">
+            Свяжитесь с Edge: Пройти Регистрацию
+        </h2>
+        <p class="section__description section__description--center">
+            Начните свой карьерный апгрейд. Заполните форму, чтобы получить бесплатную консультацию и узнать детали
+            нашей инновационной технологии.
+        </p>
+
+        <div class="contact__wrapper">
+            <form class="contact__form" id="contact-form">
+
+                <div class="contact__fieldset">
+                    <label for="name" class="contact__label">Ваше Имя</label>
+                    <input type="text" id="name" name="name" class="contact__input" placeholder="Иван" required>
+                </div>
+
+                <div class="contact__fieldset">
+                    <label for="email" class="contact__label">Ваш Email</label>
+                    <input type="email" id="email" name="email" class="contact__input"
+                        placeholder="insight@netiq-edge.click" required>
+                </div>
+
+                <div class="contact__fieldset">
+                    <label for="phone" class="contact__label">Номер Телефона</label>
+                    <input type="tel" id="phone" name="phone" class="contact__input" placeholder="+49 171 1234567"
+                        required>
+                </div>
+
+                <div class="contact__captcha">
+                    <label for="captcha" class="contact__label" id="captcha-label">
+                        Решите пример: 5 + 7 = ?
+                    </label>
+                    <input type="text" id="captcha" name="captcha" class="contact__input contact__input--small"
+                        required>
+                </div>
+
+                <div class="contact__checkbox-group">
+                    <input type="checkbox" id="privacy-agree" name="privacy-agree" required>
+                    <label for="privacy-agree" class="contact__privacy-label">
+                        Я согласен с <a href="terms.html" target="_blank">условиями использования</a> и <a
+                            href="privacy.html" target="_blank">политикой конфиденциальности</a>.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn btn--large btn--full contact__submit-btn">
+                    Пройти регистрацию
+                    <i data-lucide="send"></i>
+                </button>
+
+                <div class="contact__message-status" id="form-status"></div>
+
+            </form>
+        </div>
+    </div>
 </section>
 
-<section class="services" id="services">
-  <div class="services__container container">
 
-      <h2 class="services__heading" data-aos="fade-up">
-          Наши Услуги: **Инновационная технология** автоматизации
-      </h2>
-      <p class="services__subtext" data-aos="fade-up" data-aos-delay="100">
-          Откройте для себя **Технология нового поколения**. Мы — ваш **проверенный партнер** в создании интеллектуальных систем.
-      </p>
-
-      <div class="services__grid">
-
-          <article class="service-card" data-aos="zoom-in" data-aos-delay="200">
-              <i data-lucide="message-square" class="service-card__icon"></i>
-              <h3 class="service-card__title">Базовый Чат-Бот</h3>
-              <p class="service-card__description">
-                  Идеально для FAQ. **Быстрый и легкий старт**. Гарантируем, что **Подключение занимает 2 минуты**.
-              </p>
-              <a href="#contact" class="service-card__link button button--primary pulsate-button--small">
-                  Узнать детали
-              </a>
-          </article>
-
-          <article class="service-card service-card--featured" data-aos="zoom-in" data-aos-delay="300">
-              <i data-lucide="plug-zap" class="service-card__icon"></i>
-              <h3 class="service-card__title">Интегрированный Ассистент</h3>
-              <p class="service-card__description">
-                  Бот с интеграцией в CRM. Поможет **Оценить перспективы проекта** по автоматизации процессов.
-              </p>
-              <a href="#contact" class="service-card__link button button--primary pulsate-button--small">
-                  Получить больше информации
-              </a>
-          </article>
-
-          <article class="service-card" data-aos="zoom-in" data-aos-delay="400">
-              <i data-lucide="brain-circuit" class="service-card__icon"></i>
-              <h3 class="service-card__title">AI-Ассистент (LLM)</h3>
-              <p class="service-card__description">
-                  Разработка сложных AI-систем для генерации контента и аналитики. **Расширить горизонты проекта** с помощью AI.
-              </p>
-              <a href="#contact" class="service-card__link button button--secondary pulsate-button--small">
-                  Сформировать полное понимание
-              </a>
-          </article>
-
-      </div>
-  </div>
-</section>
-
-<section class="technology" id="technology">
-  <div class="technology__container container">
-
-      <h2 class="technology__heading" data-aos="fade-up">
-          Наш Стек: **Технология нового поколения**
-      </h2>
-      <p class="technology__subtext" data-aos="fade-up" data-aos-delay="100">
-          Мы используем передовые решения, чтобы Вы могли **Сформировать полное понимание** архитектуры Вашего будущего AI-ассистента.
-      </p>
-
-      <div class="technology__grid">
-
-          <div class="tech-item" data-aos="zoom-in" data-aos-delay="200"><i data-lucide="code" class="tech-item__icon"></i><h4 class="tech-item__title">Python & Data</h4></div>
-          <div class="tech-item" data-aos="zoom-in" data-aos-delay="300"><i data-lucide="brain-circuit" class="tech-item__icon"></i><h4 class="tech-item__title">LLM/GPT Frameworks</h4></div>
-          <div class="tech-item" data-aos="zoom-in" data-aos-delay="400"><i data-lucide="server" class="tech-item__icon"></i><h4 class="tech-item__title">Fast Node.js Backend</h4></div>
-          <div class="tech-item" data-aos="zoom-in" data-aos-delay="500"><i data-lucide="send" class="tech-item__icon"></i><h4 class="tech-item__title">Telegram & WhatsApp APIs</h4></div>
-          <div class="tech-item" data-aos="zoom-in" data-aos-delay="600"><i data-lucide="cloud" class="tech-item__icon"></i><h4 class="tech-item__title">Cloud Deployment (EU)</h4></div>
-          <div class="tech-item" data-aos="zoom-in" data-aos-delay="700"><i data-lucide="shield-check" class="tech-item__icon"></i><h4 class="tech-item__title">Security & DevOps</h4></div>
-      </div>
-
-      <a href="#contact" class="technology__cta button button--secondary pulsate-button" data-aos="fade-up" data-aos-delay="800">
-          Погрузиться в детали технологий
-      </a>
-  </div>
-</section>
-
-<section class="cases" id="cases">
-  <div class="cases__container container">
-
-      <h2 class="cases__heading" data-aos="fade-up">
-          Наши Кейсы: **Инновационная технология** в действии
-      </h2>
-      <p class="cases__subtext" data-aos="fade-up" data-aos-delay="100">
-          Wired-Wave — **проверенный партнер**. Посмотрите, как наши боты помогли клиентам.
-      </p>
-
-      <div class="cases__grid">
-
-          <article class="case-card" data-aos="zoom-in" data-aos-delay="200">
-              <i data-lucide="line-chart" class="case-card__icon"></i>
-              <h3 class="case-card__title">Автоматизация **Программа пассивного дохода**</h3>
-              <p class="case-card__summary">
-                  Разработка AI-бота для мониторинга финансовых рынков. Помог клиенту **Погрузиться в детали** трендов и увеличить ROI на 15%.
-              </p>
-              <a href="#contact" class="case-card__link button button--small button--secondary pulsate-button--small">Узнать детали</a>
-          </article>
-
-          <article class="case-card" data-aos="zoom-in" data-aos-delay="300">
-              <i data-lucide="message-square-text" class="case-card__icon"></i>
-              <h3 class="case-card__title">Чат-бот для 24/7 поддержки в Париже</h3>
-              <p class="case-card__summary">
-                  Внедрение бота для SaaS-компании во Франции. Время ответа сокращено до 30 секунд. Клиент назвал нас **Платформа года** по сервису.
-              </p>
-              <a href="#contact" class="case-card__link button button--small button--primary pulsate-button--small">Получить больше информации</a>
-          </article>
-
-          <article class="case-card" data-aos="zoom-in" data-aos-delay="400">
-              <i data-lucide="rocket" class="case-card__icon"></i>
-              <h3 class="case-card__title">AI для масштабирования в Европе</h3>
-              <p class="case-card__summary">
-                  Создание AI-ассистента для маркетинговых кампаний. Помог клиенту **Расширить горизонты проекта** на европейский рынок.
-              </p>
-              <a href="#contact" class="case-card__link button button--small button--secondary pulsate-button--small">Связаться</a>
-          </article>
-      </div>
-  </div>
-</section>
-
-<section class="process" id="process">
-  <div class="process__container container">
-
-      <h2 class="process__heading" data-aos="fade-up">Процесс Разработки: От Идеи до Внедрения</h2>
-      <p class="process__subtext" data-aos="fade-up" data-aos-delay="100">
-          Наш подход позволяет **Сформировать полное понимание** проекта на каждом этапе, гарантируя **Быстрый и легкий старт**.
-      </p>
-
-      <div class="process__timeline">
-
-          <div class="process-step" data-aos="fade-right" data-aos-delay="200">
-              <span class="process-step__number">01</span><h3 class="process-step__title">Аудит и ТЗ</h3>
-              <p class="process-step__description">
-                  Мы вместе составляем техническое задание и **Оценить перспективы проекта** перед началом работы.
-              </p>
-          </div>
-
-          <div class="process-step" data-aos="fade-left" data-aos-delay="350">
-              <span class="process-step__number">02</span><h3 class="process-step__title">Проектирование Архитектуры</h3>
-              <p class="process-step__description">
-                  Создание сетевой и логической архитектуры бота. Мы помогаем **Погрузиться в детали** системных требований.
-              </p>
-          </div>
-
-          <div class="process-step" data-aos="fade-right" data-aos-delay="500">
-              <span class="process-step__number">03</span><h3 class="process-step__title">Кодирование и Тестирование</h3>
-              <p class="process-step__description">
-                  Имплементация кода. Разработка проходит под строгим контролем качества.
-              </p>
-          </div>
-
-          <div class="process-step" data-aos="fade-left" data-aos-delay="650">
-              <span class="process-step__number">04</span><h3 class="process-step__title">Запуск и Поддержка</h3>
-              <p class="process-step__description">
-                  **Подключение занимает 2 минуты** после финальной приемки. Мы обеспечиваем полную техническую поддержку.
-              </p>
-          </div>
-      </div>
-
-      <a href="#contact" class="process__cta button button--primary pulsate-button" data-aos="fade-up" data-aos-delay="800">
-          Начать проект: Пройти регистрацию
-      </a>
-  </div>
-</section>
-
-<section class="results" id="results">
-  <div class="results__container container">
-
-      <h2 class="results__heading" data-aos="fade-up">Наши Результаты: **Платформа года** по эффективности</h2>
-      <p class="results__subtext" data-aos="fade-up" data-aos-delay="100">Мы — **проверенный партнер** в достижении целей.</p>
-
-      <div class="results__grid">
-          <div class="metric-block" data-aos="zoom-in" data-aos-delay="200"><span class="metric-block__value">40%</span><p class="metric-block__label">Сокращение операционных расходов</p></div>
-          <div class="metric-block" data-aos="zoom-in" data-aos-delay="350"><span class="metric-block__value">+25%</span><p class="metric-block__label">Рост конверсии благодаря AI</p></div>
-          <div class="metric-block" data-aos="zoom-in" data-aos-delay="500"><span class="metric-block__value">97%</span><p class="metric-block__label">Успешных внедрений (С первого раза)</p></div>
-      </div>
-
-      <a href="#contact" class="results__cta button button--primary pulsate-button" data-aos="fade-up" data-aos-delay="650">
-          Воплотите мечты в реальность: Узнать детали
-      </a>
-  </div>
-</section>
-
-<section class="reviews" id="reviews">
-  <div class="reviews__container container">
-      <h2 class="reviews__heading" data-aos="fade-up">Отзывы: Ваш **проверенный партнер** в AI</h2>
-      <p class="reviews__subtext" data-aos="fade-up" data-aos-delay="100">Реальные истории тех, кто смог **Воплотите мечты в реальность** с нашей помощью.</p>
-
-      <div class="reviews__grid">
-          <article class="review-card review-card--visible">
-              <div class="review-card__header"><div class="review-card__photo"></div><h4 class="review-card__author">Павел И., E-commerce</h4></div>
-              <i data-lucide="zap" class="review-card__icon"></i>
-              <blockquote class="review-card__quote">"Самый **Быстрый и легкий старт**! Бот заработал, и **Подключение занимает 2 минуты**, как обещали."</blockquote>
-          </article>
-
-          <article class="review-card">
-              <div class="review-card__header"><div class="review-card__photo"></div><h4 class="review-card__author">Елена К., Консалтинг</h4></div>
-              <i data-lucide="brain-circuit" class="review-card__icon"></i>
-              <blockquote class="review-card__quote">"Мы смогли **Расширить горизонты проекта** с помощью AI. Это **Инновационная технология**, которая действительно работает!"</blockquote>
-          </article>
-
-          <article class="review-card">
-              <div class="review-card__header"><div class="review-card__photo"></div><h4 class="review-card__author">Марк Р., Частный инвестор</h4></div>
-              <i data-lucide="trending-up" class="review-card__icon"></i>
-              <blockquote class="review-card__quote">"Бот для **программа пассивного дохода** окупился за месяц. Я советую Wired-Wave всем, кто хочет **Откройте новые возможности**."</blockquote>
-          </article>
-      </div>
-
-      <div class="reviews__indicator">
-          <span class="indicator-dot indicator-dot--active"></span>
-          <span class="indicator-dot"></span>
-          <span class="indicator-dot"></span>
-      </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="contact__container container">
-
-      <h2 class="contact__heading" data-aos="fade-up">Готовы **Воплотите мечты в реальность**?</h2>
-      <p class="contact__subtext" data-aos="fade-up" data-aos-delay="100">Начните **онлайн регистрацию** и получите **Бесплатная консультация по всем вопросам**.</p>
-
-      <div class="contact__wrapper">
-
-          <div class="contact__form-col" data-aos="fade-right" data-aos-delay="200">
-              <h3 class="contact__form-title">Оставьте заявку</h3>
-              <form class="contact-form" id="contactForm">
-                  <div class="form-group">
-                      <label for="contactName">Ваше Имя</label>
-                      <input type="text" id="contactName" name="name" required placeholder="Имя">
-                  </div>
-
-                  <div class="form-group">
-                      <label for="contactEmail">Email</label>
-                      <input type="email" id="contactEmail" name="email" required placeholder="email@example.com">
-                  </div>
-
-                  <div class="form-group">
-                      <label for="contactPhone">Номер Телефона</label>
-                      <input type="tel" id="contactPhone" name="phone" required placeholder="+33 X XX XX XX XX">
-                  </div>
-
-                  <div class="form-group captcha-group">
-                      <label for="captchaInput">CAPTCHA: Решите пример</label>
-                      <div class="captcha-box">
-                          <span id="captchaDisplay" class="captcha-box__display">1 + 1 = ?</span>
-                          <input type="text" id="captchaInput" name="captcha" required placeholder="Ваш ответ">
-                      </div>
-                      <p class="captcha-message" id="captchaMessage"></p>
-                  </div>
-
-                  <div class="form-group form-group--checkbox">
-                      <input type="checkbox" id="policyAccept" name="policyAccept" required>
-                      <label for="policyAccept" class="checkbox-label">
-                          Я согласен с <a href="terms.html">условиями использования</a> и <a href="privacy.html">политикой конфиденциальности</a>.
-                      </label>
-                  </div>
-
-                  <button type="submit" class="button button--primary contact-form__button pulsate-button">
-                      Отправить Заявку
-                  </button>
-
-                  <div class="submission-message" id="submissionMessage" style="display: none;">
-                      Спасибо! Ваш запрос принят. Мы скоро свяжемся с вами.
-                  </div>
-              </form>
-          </div>
-
-          <div class="contact__info-col" data-aos="fade-left" data-aos-delay="300">
-              <div class="contact__details">
-                  <h3 class="contact__info-title">Детали на сайте</h3>
-                  <p class="contact__info-text">
-                      **Доступ к платформе открыт**. Вы можете **Получить больше информации** по этим контактам:
-                  </p>
-                  <ul class="contact__list">
-                      <li><i data-lucide="mail"></i> <span class="contact__detail-text">dev@wired-wave.click</span></li>
-                      <li><i data-lucide="phone"></i> <span class="contact__detail-text">+33 1 89 76 54 32</span></li>
-                      <li><i data-lucide="map-pin"></i> <span class="contact__detail-text">102 Avenue des Champs-Élysées, 75008 Paris, France</span></li>
-                  </ul>
-              </div>
-
-              <div class="contact__visual-placeholder">
-                  <img src="img/placeholder.png" alt="Визуализация сетевого подключения" class="contact__visual">
-                  <p class="contact__visual-caption">Мы — **проверенный партнер** в Париже.</p>
-              </div>
-          </div>
-      </div>
-  </div>
-</section>
     </main>
 
-    
-    <div class="cookie-popup is-hidden" id="cookiePopup">
-      <p class="cookie-popup__text">Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="cookies.html" class="cookie-popup__link">Cookie политике</a>.</p>
-      <button class="cookie-popup__button button--primary" id="acceptCookies">Принять</button>
-  </div>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-      // Инициализация Lucide Icons
-      lucide.createIcons();
-  </script>
+    <footer class="footer">
+    <div class="container footer__container">
+
+        <div class="footer__col footer__col--logo">
+            <a href="#" class="footer__logo logo">NetIQ-Edge</a>
+            <p class="footer__tagline">Ваш карьерный апгрейд. Платформа года!</p>
+            <p class="footer__copyright">© 2025 NetIQ-Edge. Все права защищены.</p>
+        </div>
+
+        <div class="footer__col">
+            <h4 class="footer__title">Навигация</h4>
+            <ul class="footer__nav">
+                <li><a href="#hero">Главная</a></li>
+                <li><a href="#methodology">Методология</a></li>
+                <li><a href="#cases">Кейсы</a></li>
+                <li><a href="#blog">Блог</a></li>
+                <li><a href="#pricing">Тарифы</a></li>
+                <li><a href="#contact">Связаться</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__col">
+            <h4 class="footer__title">Правовая информация</h4>
+            <ul class="footer__nav">
+                <li><a href="privacy.html" target="_blank">Политика конфиденциальности</a></li>
+                <li><a href="cookies.html" target="_blank">Политика Cookies</a></li>
+                <li><a href="terms.html" target="_blank">Условия использования</a></li>
+                <li><a href="return.html" target="_blank">Условия возврата</a></li>
+                <li><a href="disclaimer.html" target="_blank">Отказ от ответственности</a></li>
+                <li><a href="personal-data-policy.html" target="_blank">Политика обработки персональных данных</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__col">
+            <h4 class="footer__title">Контакты</h4>
+            <ul class="footer__contacts">
+                <li>
+                    <i data-lucide="map-pin" class="footer__icon"></i>
+                    <address>Kaiserstraße 60, 60329 Frankfurt am Main, Deutschland</address>
+                </li>
+                <li>
+                    <i data-lucide="phone" class="footer__icon"></i>
+                    <a href="tel:+49307481593">+49 30 7481 593</a>
+                </li>
+                <li>
+                    <i data-lucide="mail" class="footer__icon"></i>
+                    <a href="mailto:insight@netiq-edge.click">insight@netiq-edge.click</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</footer>
+<div class="cookie-popup" id="cookie-popup">
+  <p>Этот сайт использует cookies для улучшения работы. Подробнее — в нашей <a href="cookies.html"
+      target="_blank">Cookie политике</a>.</p>
+  <button class="cookie-popup__button" id="cookie-accept-btn">Принять</button>
+</div>
+<script src="https://unpkg.com/lucide@latest"></script>
+
   </body>
 </html>
