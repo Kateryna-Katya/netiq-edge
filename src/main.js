@@ -1,150 +1,322 @@
+// ==========================================================================
+// ГЛОБАЛЬНА ІНІЦІАЛІЗАЦІЯ
+// ==========================================================================
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Ініціалізація Lucide Icons
+    if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+    }
 
-  // ==========================================================================
-  // 1. Base Logic (Header, Cookie Popup, AOS Init)
-  // ==========================================================================
-  const menuToggle = document.getElementById('menuToggle');
-  const headerNav = document.querySelector('.header__nav');
-  const navLinks = document.querySelectorAll('.nav__link');
-  const cookiePopup = document.getElementById('cookiePopup');
-  const acceptCookiesButton = document.getElementById('acceptCookies');
-  const cookieAccepted = localStorage.getItem('netiqedge_cookies_accepted');
-  const contactForm = document.getElementById('contactForm');
-  const captchaDisplay = document.getElementById('captchaDisplay');
-  const captchaInput = document.getElementById('captchaInput');
-  const submissionMessage = document.getElementById('submissionMessage');
-  const policyAccept = document.getElementById('policyAccept');
-  let correctAnswer = 0;
-
-
-  // Header Toggle Logic
-  const toggleMenu = () => {
-      headerNav.classList.toggle('is-open');
-      const iconElement = menuToggle.querySelector('svg');
-      if (headerNav.classList.contains('is-open')) {
-          iconElement.setAttribute('data-lucide', 'x');
-      } else {
-          iconElement.setAttribute('data-lucide', 'menu');
-      }
-      lucide.createIcons();
-  };
-  menuToggle.addEventListener('click', toggleMenu);
-  navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-          if (window.innerWidth < 992) { setTimeout(toggleMenu, 200); }
-      });
-  });
-
-  // Cookie Popup Logic
-  const showCookiePopup = () => { if (!cookieAccepted) { cookiePopup.classList.remove('is-hidden'); } }
-  const hideCookiePopup = () => { cookiePopup.classList.add('is-hidden'); localStorage.setItem('netiqedge_cookies_accepted', 'true'); }
-  showCookiePopup();
-  acceptCookiesButton.addEventListener('click', hideCookiePopup);
-
-  // AOS Initialization (Required for entrance animations)
-  AOS.init({
-      duration: 800,
-      once: true,
-  });
-
-  // ==========================================================================
-  // 2. JS Анимация Hero-секции (Data Edge / Connection Flow)
-  // ==========================================================================
-  const canvas = document.getElementById('dataEdgeCanvas');
-
-  if (canvas) {
-      const ctx = canvas.getContext('2d');
-      let width = canvas.width = window.innerWidth;
-      let height = canvas.height = document.querySelector('.hero').offsetHeight;
-      const nodes = [];
-      const numNodes = 70;
-      const linkDistance = 150;
-      const particleColor = '#1976D2';
-      const trailColor = 'rgba(255, 255, 255, 0.5)';
-
-      class Node {
-          constructor() {
-              this.x = Math.random() * width; this.y = Math.random() * height;
-              this.radius = 1.5 + Math.random() * 0.5;
-              this.vx = (Math.random() - 0.5) * 0.4; this.vy = (Math.random() - 0.5) * 0.4;
-          }
-          update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > width) this.vx *= -1; if (this.y < 0 || this.y > height) this.vy *= -1; this.draw(); }
-          draw() { ctx.fillStyle = particleColor; ctx.beginPath(); ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fill(); }
-      }
-
-      const initNodes = () => { width = canvas.width = window.innerWidth; height = canvas.height = document.querySelector('.hero').offsetHeight; nodes.length = 0; for (let i = 0; i < numNodes; i++) { nodes.push(new Node()); } };
-
-      const connectNodes = () => {
-          ctx.lineWidth = 0.5;
-          for (let i = 0; i < nodes.length; i++) {
-              for (let j = i; j < nodes.length; j++) {
-                  const distance = Math.sqrt(Math.pow(nodes[i].x - nodes[j].x, 2) + Math.pow(nodes[i].y - nodes[j].y, 2));
-                  if (distance < linkDistance) {
-                      ctx.strokeStyle = `rgba(255, 87, 34, ${1 - distance / linkDistance})`;
-                      ctx.beginPath(); ctx.moveTo(nodes[i].x, nodes[i].y); ctx.lineTo(nodes[j].x, nodes[j].y); ctx.stroke();
-                  }
-              }
-          }
-      };
-
-      const animateNetwork = () => {
-          requestAnimationFrame(animateNetwork);
-          ctx.fillStyle = trailColor;
-          ctx.fillRect(0, 0, width, height);
-          connectNodes();
-          nodes.forEach(node => node.update());
-      };
-
-      window.addEventListener('resize', initNodes);
-      initNodes();
-      animateNetwork();
-  }
-
-
-  // ==========================================================================
-  // 3. JS Логика Формы Контактов и CAPTCHA
-  // ==========================================================================
-  function generateCaptcha() {
-      const captchaInput = document.getElementById('captchaInput');
-      const captchaMessage = document.getElementById('captchaMessage');
-      const operator = Math.random() < 0.5 ? '+' : '-';
-      let num1 = Math.floor(Math.random() * 15) + 5;
-      let num2 = Math.floor(Math.random() * 10) + 1;
-      if (operator === '-' && num1 < num2) { [num1, num2] = [num2, num1]; }
-      correctAnswer = operator === '+' ? num1 + num2 : num1 - num2;
-      captchaDisplay.textContent = `${num1} ${operator} ${num2} = ?`;
-      captchaInput.value = '';
-      captchaMessage.textContent = ''; // Очищаем сообщение
-  }
-
-  function validateCaptcha() {
-      const captchaInput = document.getElementById('captchaInput');
-      const captchaMessage = document.getElementById('captchaMessage');
-      if (!captchaInput.value.trim()) { return false; }
-      const userAnswer = parseInt(captchaInput.value.trim());
-      if (userAnswer === correctAnswer) { return true; }
-      else {
-          captchaMessage.textContent = 'Неверный ответ. Попробуйте еще раз.';
-          captchaMessage.style.color = '#FF4545';
-          generateCaptcha();
-          return false;
-      }
-  }
-
-  generateCaptcha();
-
-  contactForm.addEventListener('submit', function(event) {
-      event.preventDefault();
-      submissionMessage.style.display = 'none';
-
-      if (validateCaptcha() && policyAccept.checked) {
-          submissionMessage.style.display = 'block';
-          contactForm.reset();
-          generateCaptcha();
-          setTimeout(() => { submissionMessage.style.display = 'none'; }, 5000);
-      } else if (!policyAccept.checked) {
-          alert('Пожалуйста, примите условия использования и политику конфиденциальности.');
-          policyAccept.focus();
-      }
-  });
+    // Виклики основних функцій сайту
+    handleCookiePopup();
+    handleBurgerMenu();
+    setupHeroAnimation(); 
+    setupFaqAccordion(); 
+    setupScrollAnimation(); 
+    handleContactForm(); 
 });
+
+
+// ==========================================================================
+// 1. Логіка Cookie Pop-up (Етап 5.1)
+// ==========================================================================
+function handleCookiePopup() {
+    const popup = document.getElementById('cookie-popup');
+    const acceptBtn = document.getElementById('cookie-accept-btn');
+    const cookieName = 'netiq_cookie_accepted';
+
+    if (!popup) return;
+
+    // Перевіряємо, чи є запис в localStorage
+    if (!localStorage.getItem(cookieName)) {
+        popup.classList.remove('hidden');
+    } else {
+        popup.classList.add('hidden');
+    }
+
+    // Обробник кліку на кнопку "Принять"
+    acceptBtn.addEventListener('click', () => {
+        localStorage.setItem(cookieName, 'true');
+        popup.classList.add('hidden');
+
+        setTimeout(() => {
+            popup.style.display = 'none';
+        }, 500); // Час має відповідати CSS transition-speed
+    });
+}
+
+// ==========================================================================
+// 2. Логіка мобільного меню (Burger Menu)
+// ==========================================================================
+function handleBurgerMenu() {
+    const burger = document.getElementById('burger-menu');
+    const nav = document.querySelector('.header__nav');
+    const navLinks = document.querySelectorAll('.nav__link'); 
+
+    if (!burger || !nav) return;
+
+    burger.addEventListener('click', () => {
+        nav.classList.toggle('nav--active'); 
+        
+        const iconName = nav.classList.contains('nav--active') ? 'x' : 'menu';
+        burger.querySelector('svg').setAttribute('data-lucide', iconName);
+        lucide.createIcons();
+    });
+
+    // При кліку на якірне посилання, закриваємо меню
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (nav.classList.contains('nav--active')) {
+                nav.classList.remove('nav--active');
+                burger.querySelector('svg').setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            }
+        });
+    });
+}
+
+// ==========================================================================
+// 3. Логіка Hero Section Анімація (Net-IQ Mesh)
+// ==========================================================================
+function setupHeroAnimation() {
+    const canvas = document.getElementById('hero-canvas');
+    if (!canvas) return; 
+
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+    const maxParticles = 50;
+
+    function resizeCanvas() {
+        width = canvas.width = canvas.clientWidth;
+        height = canvas.height = canvas.clientHeight;
+    }
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * width;
+            this.y = Math.random() * height;
+            this.radius = Math.random() * 2 + 1;
+            this.velocity = {
+                x: (Math.random() - 0.5) * 0.5,
+                y: (Math.random() - 0.5) * 0.5
+            };
+            this.color = `rgba(0, 188, 212, ${Math.random() * 0.4 + 0.1})`;
+        }
+
+        update() {
+            this.x += this.velocity.x;
+            this.y += this.velocity.y;
+
+            if (this.x < 0 || this.x > width) this.velocity.x *= -1;
+            if (this.y < 0 || this.y > height) this.velocity.y *= -1;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = this.color;
+            ctx.fill();
+        }
+    }
+
+    function createParticles() {
+        particles = [];
+        for (let i = 0; i < maxParticles; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function connectParticles() {
+        let maxDistance = 120; 
+
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const p1 = particles[i];
+                const p2 = particles[j];
+
+                const dist = Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
+
+                if (dist < maxDistance) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(0, 188, 212, ${1 - dist / maxDistance * 0.7})`; 
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(p1.x, p1.y);
+                    ctx.lineTo(p2.x, p2.y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+        ctx.clearRect(0, 0, width, height); 
+
+        connectParticles();
+
+        particles.forEach(p => {
+            p.update();
+            p.draw();
+        });
+    }
+
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    createParticles();
+    animate();
+}
+
+// ==========================================================================
+// 4. Логіка Акордеону FAQ (Етап 3.6)
+// ==========================================================================
+function setupFaqAccordion() {
+    const questions = document.querySelectorAll('.faq__question');
+
+    questions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            
+            // Закриваємо всі відповіді, крім поточної
+            questions.forEach(q => {
+                if (q !== question) {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('open');
+                }
+            });
+
+            // Перемикаємо активний стан для поточної відповіді
+            question.classList.toggle('active');
+            answer.classList.toggle('open');
+        });
+    });
+}
+
+
+// ==========================================================================
+// 5. Логіка Анімації При Скролінгу (Універсальне Рішення)
+// ==========================================================================
+function setupScrollAnimation() {
+    // Список всех элементов, которые мы хотим анимировать при скролле
+    const animatedElements = [
+        ...document.querySelectorAll('.methodology__card'),
+        ...document.querySelectorAll('.case-card'),
+        ...document.querySelectorAll('.blog-card'),
+        ...document.querySelectorAll('.pricing__card'),
+        ...document.querySelectorAll('.faq__item') 
+    ];
+
+    if (animatedElements.length === 0) return;
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.dataset.delay) || 0;
+                
+                setTimeout(() => {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); 
+                }, delay);
+            }
+        });
+    }, {
+        rootMargin: '0px', 
+        threshold: 0.1 
+    });
+
+    animatedElements.forEach((element, index) => {
+        // Забезпечення каскадної затримки, якщо data-delay не встановлено в HTML
+        if (!element.dataset.delay) {
+            let delayTime = 0;
+            if (element.classList.contains('methodology__card')) {
+                delayTime = (index % 4) * 150; 
+            } else {
+                 // Для Case, Blog, Pricing, FAQ
+                delayTime = (index % 3) * 200; 
+            }
+            element.dataset.delay = delayTime;
+        }
+        observer.observe(element);
+    });
+}
+
+
+// ==========================================================================
+// 6. Логіка Секції Контактів та CAPTCHA (Етап 4)
+// ==========================================================================
+let captchaResult = 0;
+
+function generateCaptcha() {
+    const num1 = Math.floor(Math.random() * 9) + 1;
+    const num2 = Math.floor(Math.random() * 9) + 1;
+    captchaResult = num1 + num2;
+    
+    const captchaLabel = document.getElementById('captcha-label');
+    if (captchaLabel) {
+        captchaLabel.textContent = `Решите пример: ${num1} + ${num2} = ?`;
+    }
+}
+
+function handleContactForm() {
+    const form = document.getElementById('contact-form');
+    const statusDiv = document.getElementById('form-status');
+    const captchaInput = document.getElementById('captcha');
+
+    if (!form) return;
+    
+    generateCaptcha(); // Генерація CAPTCHA при завантаженні форми
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // 1. Валідація CAPTCHA
+        const userAnswer = parseInt(captchaInput.value.trim(), 10);
+
+        if (userAnswer !== captchaResult) {
+            displayStatus('Неверный ответ CAPTCHA. Попробуйте еще раз.', 'error');
+            generateCaptcha(); 
+            captchaInput.value = '';
+            return;
+        }
+
+        // 2. Імітація відправки (затримка 1.5 сек)
+        displayStatus('Отправка данных...', 'pending');
+        
+        const submitBtn = form.querySelector('.contact__submit-btn');
+        submitBtn.disabled = true;
+
+        setTimeout(() => {
+            // Імітуємо успішну відправку
+            const isSuccess = true; 
+
+            if (isSuccess) {
+                displayStatus('Спасибо! Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
+                form.reset(); 
+                generateCaptcha(); 
+            } else {
+                 displayStatus('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.', 'error');
+            }
+            
+            submitBtn.disabled = false; 
+        }, 1500); 
+    });
+
+    function displayStatus(message, type) {
+        statusDiv.textContent = message;
+        statusDiv.className = 'contact__message-status';
+        
+        if (type === 'success') {
+            statusDiv.classList.add('success');
+        } else if (type === 'error') {
+            statusDiv.classList.add('error');
+        }
+        
+        statusDiv.style.display = 'block';
+        if (type === 'success') {
+            setTimeout(() => {
+                statusDiv.style.display = 'none';
+            }, 5000);
+        }
+    }
+}
